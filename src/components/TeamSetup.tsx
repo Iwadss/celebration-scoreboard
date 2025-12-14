@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Rocket, Star, Zap, Trophy, Crown } from "lucide-react";
+import { Rocket, Star, Zap, Trophy, Crown, Heart, Flame, Target, Shield, Gem } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -10,6 +10,11 @@ const TEAM_ICONS = [
   { id: "zap", Icon: Zap, label: "Lightning" },
   { id: "trophy", Icon: Trophy, label: "Trophy" },
   { id: "crown", Icon: Crown, label: "Crown" },
+  { id: "heart", Icon: Heart, label: "Heart" },
+  { id: "flame", Icon: Flame, label: "Flame" },
+  { id: "target", Icon: Target, label: "Target" },
+  { id: "shield", Icon: Shield, label: "Shield" },
+  { id: "gem", Icon: Gem, label: "Gem" },
 ];
 
 const TEAM_COLORS = [
@@ -210,6 +215,12 @@ const TeamSetup = ({ onStartGame }: TeamSetupProps) => {
           </motion.div>
         </motion.div>
       </motion.div>
+
+      <footer className="text-center mt-8 pb-4">
+        <p className="text-muted-foreground font-body text-sm">
+          created by <span className="font-semibold text-primary">ifwad</span>
+        </p>
+      </footer>
     </div>
   );
 };
