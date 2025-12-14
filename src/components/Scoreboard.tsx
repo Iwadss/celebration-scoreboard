@@ -4,6 +4,7 @@ import ReactConfetti from "react-confetti";
 import { RotateCcw, PartyPopper } from "lucide-react";
 import TeamCard from "./TeamCard";
 import { Team } from "./TeamSetup";
+import { Footer } from "./Footer";
 import { Button } from "@/components/ui/button";
 
 interface ScoreboardProps {
@@ -144,11 +145,7 @@ const Scoreboard = ({ initialTeams, onReset }: ScoreboardProps) => {
           </motion.div>
         )}
 
-        <footer className="text-center mt-8 pb-4">
-          <p className="text-muted-foreground font-body text-sm">
-            created by <span className="font-semibold text-primary">ifwad</span>
-          </p>
-        </footer>
+
       </div>
     </div>
   );
