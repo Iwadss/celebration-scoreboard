@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Github, Youtube } from "lucide-react";
+import { Instagram, Github, Linkedin } from "lucide-react";
 
 export const Footer = () => {
     return (
@@ -13,16 +13,7 @@ export const Footer = () => {
                     {/* Social Media Icons */}
                     <div className="flex items-center gap-4">
                         <a
-                            href="https://facebook.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground/60 hover:text-violet-400 transition-colors"
-                            aria-label="Facebook"
-                        >
-                            <Facebook size={20} />
-                        </a>
-                        <a
-                            href="https://instagram.com"
+                            href="https://www.instagram.com/mfwd.docx/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground/60 hover:text-violet-400 transition-colors"
@@ -31,24 +22,7 @@ export const Footer = () => {
                             <Instagram size={20} />
                         </a>
                         <a
-                            href="https://twitter.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground/60 hover:text-violet-400 transition-colors"
-                            aria-label="X (Twitter)"
-                        >
-                            <svg
-                                viewBox="0 0 24 24"
-                                width="20"
-                                height="20"
-                                fill="currentColor"
-                                aria-hidden="true"
-                            >
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg>
-                        </a>
-                        <a
-                            href="https://github.com"
+                            href="https://github.com/Iwadss"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground/60 hover:text-violet-400 transition-colors"
@@ -57,13 +31,13 @@ export const Footer = () => {
                             <Github size={20} />
                         </a>
                         <a
-                            href="https://youtube.com"
+                            href="https://www.linkedin.com/in/ifwad"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-muted-foreground/60 hover:text-violet-400 transition-colors"
-                            aria-label="YouTube"
+                            aria-label="LinkedIn"
                         >
-                            <Youtube size={20} />
+                            <Linkedin size={20} />
                         </a>
                     </div>
                 </div>
