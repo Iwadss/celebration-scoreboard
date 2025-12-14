@@ -7,7 +7,7 @@ export const Footer = () => {
                 <div className="flex flex-col items-center justify-center gap-3 text-center">
                     {/* Copyright Text */}
                     <p className="text-muted-foreground/70 font-body text-sm">
-                        © 2024 Created by <span className="font-semibold text-violet-400">Ifwad</span>. All rights reserved.
+                        © 2025 Created by <span className="font-semibold text-violet-400">Ifwad</span>. All rights reserved.
                     </p>
 
                     {/* Social Media Icons */}
