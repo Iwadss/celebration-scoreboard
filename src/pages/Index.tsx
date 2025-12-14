@@ -1,14 +1,26 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import TeamSetup, { Team } from "@/components/TeamSetup";
+import Scoreboard from "@/components/Scoreboard";
 
 const Index = () => {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
+  const [gameStarted, setGameStarted] = useState(false);
+  const [teams, setTeams] = useState<Team[]>([]);
+
+  const handleStartGame = (newTeams: Team[]) => {
+    setTeams(newTeams);
+    setGameStarted(true);
+  };
+
+  const handleResetGame = () => {
+    setGameStarted(false);
+    setTeams([]);
+  };
+
+  if (!gameStarted) {
+    return <TeamSetup onStartGame={handleStartGame} />;
+  }
+
+  return <Scoreboard initialTeams={teams} onReset={handleResetGame} />;
 };
 
 export default Index;
