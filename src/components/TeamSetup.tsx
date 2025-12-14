@@ -124,9 +124,8 @@ const TeamSetup = ({ onStartGame }: TeamSetupProps) => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className={`p-4 rounded-xl border-2 border-border ${
-                  TEAM_COLORS[index]
-                }/10`}
+                className={`p-4 rounded-xl border-2 border-border ${TEAM_COLORS[index]
+                  }/10`}
               >
                 <div className="flex items-center gap-3 mb-3">
                   <span
@@ -147,40 +146,52 @@ const TeamSetup = ({ onStartGame }: TeamSetupProps) => {
                   )}
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Input
-                    placeholder="Enter team name..."
-                    value={team.name}
-                    onChange={(e) => updateTeam(index, "name", e.target.value)}
-                    className="flex-1 font-body"
-                  />
+                <div className="flex flex-col gap-3">
+                  {/* Input and Selected Icon Row */}
+                  <div className="flex items-center gap-3">
+                    <Input
+                      placeholder="Enter team name..."
+                      value={team.name}
+                      onChange={(e) => updateTeam(index, "name", e.target.value)}
+                      className="flex-1 font-body"
+                    />
+                    {/* Display Selected Icon */}
+                    <div className={`w-12 h-12 rounded-lg flex items-center justify-center ${TEAM_COLORS[index]} text-primary-foreground shadow-button flex-shrink-0`}>
+                      {(() => {
+                        const SelectedIcon = TEAM_ICONS.find(icon => icon.id === team.iconId)?.Icon || Rocket;
+                        return <SelectedIcon size={24} />;
+                      })()}
+                    </div>
+                  </div>
 
-                  <div className="flex gap-2">
-                    {TEAM_ICONS.map(({ id, Icon }) => {
-                      const isSelected = team.iconId === id;
-                      const isUsedByOther = teams.some(
-                        (t, i) => i !== index && t.iconId === id
-                      );
+                  {/* Scrollable Icon Selector Below */}
+                  <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent hover:scrollbar-thumb-muted-foreground/30 pb-2">
+                    <div className="flex gap-2 min-w-max">
+                      {TEAM_ICONS.map(({ id, Icon }) => {
+                        const isSelected = team.iconId === id;
+                        const isUsedByOther = teams.some(
+                          (t, i) => i !== index && t.iconId === id
+                        );
 
-                      return (
-                        <button
-                          key={id}
-                          onClick={() =>
-                            !isUsedByOther && updateTeam(index, "iconId", id)
-                          }
-                          disabled={isUsedByOther}
-                          className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all ${
-                            isSelected
+                        return (
+                          <button
+                            key={id}
+                            onClick={() =>
+                              !isUsedByOther && updateTeam(index, "iconId", id)
+                            }
+                            disabled={isUsedByOther}
+                            className={`w-10 h-10 rounded-lg flex items-center justify-center transition-all flex-shrink-0 ${isSelected
                               ? `${TEAM_COLORS[index]} text-primary-foreground shadow-button`
                               : isUsedByOther
-                              ? "bg-muted text-muted-foreground cursor-not-allowed opacity-40"
-                              : "bg-muted hover:bg-muted/80 text-muted-foreground"
-                          }`}
-                        >
-                          <Icon size={20} />
-                        </button>
-                      );
-                    })}
+                                ? "bg-muted text-muted-foreground cursor-not-allowed opacity-40"
+                                : "bg-muted hover:bg-muted/80 text-muted-foreground"
+                              }`}
+                          >
+                            <Icon size={20} />
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -215,12 +226,6 @@ const TeamSetup = ({ onStartGame }: TeamSetupProps) => {
           </motion.div>
         </motion.div>
       </motion.div>
-
-      <footer className="text-center mt-8 pb-4">
-        <p className="text-muted-foreground font-body text-sm">
-          created by <span className="font-semibold text-primary">ifwad</span>
-        </p>
-      </footer>
     </div>
   );
 };

@@ -147,6 +147,7 @@ const Scoreboard = ({ initialTeams, onReset }: ScoreboardProps) => {
 
 
       </div>
+      <Footer />
     </div>
   );
 };
