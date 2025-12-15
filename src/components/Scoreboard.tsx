@@ -9,10 +9,11 @@ import { Button } from "@/components/ui/button";
 
 interface ScoreboardProps {
   initialTeams: Team[];
+  gameName: string;
   onReset: () => void;
 }
 
-const Scoreboard = ({ initialTeams, onReset }: ScoreboardProps) => {
+const Scoreboard = ({ initialTeams, gameName, onReset }: ScoreboardProps) => {
   const [teams, setTeams] = useState<Team[]>(initialTeams);
   const [showConfetti, setShowConfetti] = useState(false);
   const [scoringTeam, setScoringTeam] = useState<string | null>(null);
@@ -57,7 +58,7 @@ const Scoreboard = ({ initialTeams, onReset }: ScoreboardProps) => {
   };
 
   return (
-    <div className="min-h-screen p-4 md:p-8">
+    <div className="min-h-screen flex flex-col">
       {showConfetti && (
         <ReactConfetti
           width={window.innerWidth}
@@ -85,68 +86,76 @@ const Scoreboard = ({ initialTeams, onReset }: ScoreboardProps) => {
         )}
       </AnimatePresence>
 
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8"
-        >
-          <h1 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
-            🏆 Scoreboard
-          </h1>
-          <p className="text-muted-foreground font-body">
-            Tap +1 to score for your team!
-          </p>
-        </motion.div>
-
-        <div className={`grid ${getGridCols()} gap-4 md:gap-6 mb-8`}>
-          {teams.map((team, index) => (
-            <TeamCard
-              key={team.id}
-              {...team}
-              teamIndex={index}
-              onScore={handleScore}
-              isLeading={leadingTeams.some((t) => t.id === team.id)}
-            />
-          ))}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="text-center"
-        >
-          <Button
-            onClick={onReset}
-            variant="outline"
-            size="lg"
-            className="font-display gap-2 border-2 hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all"
-          >
-            <RotateCcw size={18} />
-            Reset Game
-          </Button>
-        </motion.div>
-
-        {maxScore > 0 && (
+      <div className="flex-1 p-4 md:p-8">
+        <div className="max-w-7xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-8 text-center"
+            className="text-center mb-8"
           >
-            <div className="inline-block bg-card rounded-2xl shadow-soft px-6 py-4">
-              <p className="text-muted-foreground font-body text-sm mb-1">
-                Total Points
-              </p>
-              <p className="font-display font-bold text-3xl text-foreground">
-                {teams.reduce((sum, t) => sum + t.score, 0)}
-              </p>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
+              🏆 Scoreboard
+            </h2>
+            {gameName && (
+              <motion.p
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
+                className="text-primary font-display font-bold text-2xl md:text-3xl"
+              >
+                {gameName}
+              </motion.p>
+            )}
           </motion.div>
-        )}
 
+          <div className={`grid ${getGridCols()} gap-4 md:gap-6 mb-8`}>
+            {teams.map((team, index) => (
+              <TeamCard
+                key={team.id}
+                {...team}
+                teamIndex={index}
+                onScore={handleScore}
+                isLeading={leadingTeams.some((t) => t.id === team.id)}
+              />
+            ))}
+          </div>
 
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
+            className="text-center"
+          >
+            <Button
+              onClick={onReset}
+              variant="outline"
+              size="lg"
+              className="font-display gap-2 border-2 hover:bg-destructive hover:text-destructive-foreground hover:border-destructive transition-all"
+            >
+              <RotateCcw size={18} />
+              Reset Game
+            </Button>
+          </motion.div>
+
+          {maxScore > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="mt-8 text-center"
+            >
+              <div className="inline-block bg-card rounded-2xl shadow-soft px-6 py-4">
+                <p className="text-muted-foreground font-body text-sm mb-1">
+                  Total Points
+                </p>
+                <p className="font-display font-bold text-3xl text-foreground">
+                  {teams.reduce((sum, t) => sum + t.score, 0)}
+                </p>
+              </div>
+            </motion.div>
+          )}
+        </div>
       </div>
+
       <Footer />
     </div>
   );

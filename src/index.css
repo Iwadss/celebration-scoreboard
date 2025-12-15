@@ -102,38 +102,66 @@
   .gradient-bg {
     background: var(--gradient-bg);
   }
-  
+
   .gradient-primary {
     background: var(--gradient-primary);
   }
-  
+
   .gradient-celebration {
     background: var(--gradient-celebration);
   }
-  
+
   .shadow-soft {
     box-shadow: var(--shadow-soft);
   }
-  
+
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
-  
+
   .shadow-button {
     box-shadow: var(--shadow-button);
   }
-  
-  .team-1 { background-color: hsl(var(--team-1)); }
-  .team-2 { background-color: hsl(var(--team-2)); }
-  .team-3 { background-color: hsl(var(--team-3)); }
-  .team-4 { background-color: hsl(var(--team-4)); }
-  .team-5 { background-color: hsl(var(--team-5)); }
-  
-  .team-1-light { background-color: hsl(var(--team-1) / 0.15); }
-  .team-2-light { background-color: hsl(var(--team-2) / 0.15); }
-  .team-3-light { background-color: hsl(var(--team-3) / 0.15); }
-  .team-4-light { background-color: hsl(var(--team-4) / 0.15); }
-  .team-5-light { background-color: hsl(var(--team-5) / 0.15); }
+
+  .team-1 {
+    background-color: hsl(var(--team-1));
+  }
+
+  .team-2 {
+    background-color: hsl(var(--team-2));
+  }
+
+  .team-3 {
+    background-color: hsl(var(--team-3));
+  }
+
+  .team-4 {
+    background-color: hsl(var(--team-4));
+  }
+
+  .team-5 {
+    background-color: hsl(var(--team-5));
+  }
+
+  .team-1-light {
+    background-color: hsl(var(--team-1) / 0.15);
+  }
+
+  .team-2-light {
+    background-color: hsl(var(--team-2) / 0.15);
+  }
+
+  .team-3-light {
+    background-color: hsl(var(--team-3) / 0.15);
+  }
+
+  .team-4-light {
+    background-color: hsl(var(--team-4) / 0.15);
+  }
+
+  .team-5-light {
+    background-color: hsl(var(--team-5) / 0.15);
+  }
 
   /* Custom Scrollbar Styles */
   .scrollbar-thin {
@@ -170,4 +198,3 @@
     background-color: hsl(var(--muted-foreground) / 0.3);
   }
 }
-
