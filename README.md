@@ -1,74 +1,72 @@
-# Welcome to your Lovable project
+# Celebration Scoreboard
 
-## Project info
+A fun and interactive scoreboard application for tracking team scores during game nights, trivia, and competitions. Supports up to 5 teams with celebration effects!
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Features
 
-## How can I edit this code?
+- 🎮 Support for up to 5 teams
+- 🎨 Customizable team names and icons
+- 🎯 Game name tracking
+- 🎊 Celebration animations when teams score
+- 📱 Responsive design for all devices
+- 🎨 Modern, colorful UI with smooth animations
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
+## Technologies Used
 
 This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Vite** - Fast build tool and dev server
+- **TypeScript** - Type-safe JavaScript
+- **React** - UI library
+- **Tailwind CSS** - Utility-first CSS framework
+- **shadcn-ui** - Beautiful UI components
+- **Framer Motion** - Animation library
+- **React Confetti** - Celebration effects
 
-## How can I deploy this project?
+## Getting Started
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Prerequisites
 
-## Can I connect a custom domain to my Lovable project?
+- Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Yes, you can!
+### Installation
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+```sh
+# Clone the repository
+git clone https://github.com/Iwadss/celebration-scoreboard.git
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-# celebration-scoreboard
+# Navigate to the project directory
+cd celebration-scoreboard
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+The application will be available at `http://localhost:8080`
+
+## Usage
+
+1. **Setup**: Enter a game name and create your teams (1-5 teams)
+2. **Customize**: Choose team names and icons for each team
+3. **Play**: Click the +1 button to add points to teams
+4. **Celebrate**: Enjoy the confetti and animations when teams score!
+5. **Reset**: Start a new game anytime with the Reset Game button
+
+## Deployment
+
+You can deploy this project to any static hosting service:
+
+- **Vercel**: Connect your GitHub repository
+- **Netlify**: Deploy from GitHub
+- **GitHub Pages**: Use GitHub Actions for deployment
+
+## Author
+
+Created by **Ifwad**
+
+- GitHub: [@Iwadss](https://github.com/Iwadss)
+- Instagram: [@mfwd.docx](https://www.instagram.com/mfwd.docx/)
+- LinkedIn: [Ifwad](https://www.linkedin.com/in/ifwad)

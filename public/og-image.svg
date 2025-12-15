@@ -1,0 +1,49 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5F3FF"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="100" cy="100" r="60" fill="#8B5CF6" opacity="0.1"/>
+  <circle cx="1100" cy="530" r="80" fill="#06B6D4" opacity="0.1"/>
+  <circle cx="1050" cy="100" r="50" fill="#EC4899" opacity="0.1"/>
+  
+  <!-- Main content -->
+  <text x="600" y="220" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#1F2937" text-anchor="middle">
+    🏆 Game Scoreboard
+  </text>
+  
+  <text x="600" y="290" font-family="Arial, sans-serif" font-size="32" fill="#6B7280" text-anchor="middle">
+    Track Your Team Scores
+  </text>
+  
+  <!-- Team icons -->
+  <g transform="translate(300, 380)">
+    <circle cx="0" cy="0" r="40" fill="#8B5CF6"/>
+    <text x="0" y="15" font-size="40" text-anchor="middle">🚀</text>
+  </g>
+  
+  <g transform="translate(450, 380)">
+    <circle cx="0" cy="0" r="40" fill="#06B6D4"/>
+    <text x="0" y="15" font-size="40" text-anchor="middle">⭐</text>
+  </g>
+  
+  <g transform="translate(600, 380)">
+    <circle cx="0" cy="0" r="40" fill="#EC4899"/>
+    <text x="0" y="15" font-size="40" text-anchor="middle">🔥</text>
+  </g>
+  
+  <g transform="translate(750, 380)">
+    <circle cx="0" cy="0" r="40" fill="#F59E0B"/>
+    <text x="0" y="15" font-size="40" text-anchor="middle">👑</text>
+  </g>
+  
+  <g transform="translate(900, 380)">
+    <circle cx="0" cy="0" r="40" fill="#10B981"/>
+    <text x="0" y="15" font-size="40" text-anchor="middle">🏅</text>
+  </g>
+  
+  <!-- Footer text -->
+  <text x="600" y="520" font-family="Arial, sans-serif" font-size="20" fill="#9CA3AF" text-anchor="middle">
+    Fun and interactive team score tracking
+  </text>
+</svg>
